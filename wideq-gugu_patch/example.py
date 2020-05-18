@@ -1,0 +1,142 @@
+import wideq
+import json
+import time
+import argparse
+import sys
+import os
+import datetime
+
+STATE_FILE = 'wideq_state.json'
+DEBUG_MODE = False
+
+def authenticate(gateway):
+    """Interactively authenticate the user via a browser to get an OAuth
+    session.
+    """
+
+    login_url = gateway.oauth_url()
+    print('Log in here:')
+    print(login_url)
+    print('Then paste the URL where the browser is redirected:')
+    callback_url = input()
+    return wideq.Auth.from_url(gateway, callback_url)
+
+
+def mon(client, device_id):
+    """Monitor any device, displaying generic information about its
+    status.
+    """
+
+    device = client.get_device(device_id)
+    model = client.model_info(device)
+    device.load_model_info
+    device.load_lang_pack_product
+    device.load_lang_pack_model
+
+    with wideq.Monitor(client.session, device_id) as mon:
+        try:
+            #while True:
+                data = mon.poll()
+                time.sleep(2)
+                now = datetime.datetime.now()
+                print('polling... {}:{}:{}'.format(now.hour, now.minute, now.second))
+                data = mon.poll()
+                if data:
+                    try:
+                        res = model.decode_monitor(data)
+                        if DEBUG_MODE:
+                            with open(device.name + '_polling.json', 'w', -1, 'utf-8') as outfile:
+                                #json.dump(res, outfile, ensure_ascii=False, indent="\t")
+                                data=json.loads(outfile)
+                                print(data['SensorPM1'])
+                    except ValueError:
+                        print('status data: {!r}'.format(data))
+                    else:
+                        print('-----------------------')
+                        print(res['SensorPM1'])
+                        print(res['SensorPM2'])
+                        print(res['SensorPM10'])
+                        print(res['SensorHumidity'])
+                        print('-----------------------')
+                        sys.exit(0)
+        except KeyboardInterrupt:
+            pass
+
+
+class UserError(Exception):
+    """A user-visible command-line error.
+    """
+    def __init__(self, msg):
+        self.msg = msg
+
+
+def _force_device(client, device_id):
+    """Look up a device in the client (using `get_device`), but raise
+    UserError if the device is not found.
+    """
+    device = client.get_device(device_id)
+    if not device:
+        raise UserError('device "{}" not found'.format(device_id))
+    return device
+
+
+
+EXAMPLE_COMMANDS = {
+
+    'mon': mon,
+
+}
+
+
+def example_command(client, cmd, args):
+    func = EXAMPLE_COMMANDS[cmd]
+    func(client, args)
+
+
+def example(country, language, cmd, args):
+    # Load the current state for the example.
+    try:
+        with open(STATE_FILE, 'r', -1, 'utf-8') as f:
+            state = json.load(f)
+    except IOError:
+        state = {}
+
+    client = wideq.Client.load(state)
+    if country:
+        client._country = country
+    if language:
+        client._language = language
+
+    # Log in, if we don't already have an authentication.
+    if not client._auth:
+        client._auth = authenticate(client.gateway)
+
+    # Loop to retry if session has expired.
+    while True:
+        try:
+            print('SH:')
+            example_command(client, cmd, args)
+            break
+
+        except wideq.NotLoggedInError:
+            print('Session expired.')
+            client.refresh()
+
+        except UserError as exc:
+            print(exc.msg, file=sys.stderr)
+            sys.exit(1)
+
+    # Save the updated state.
+    state = client.dump()
+    with open(STATE_FILE, 'w', -1, 'utf-8') as f:
+        json.dump(state, f, ensure_ascii=False, indent="\t")
+
+
+def main():
+
+    example(country='kr',language='ko-KR',cmd='mon',args='d286d780-7149-11d3-80f8-203dbd8d44ce' )
+
+
+if __name__ == '__main__':
+
+    main()

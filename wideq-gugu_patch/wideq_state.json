@@ -1,0 +1,1214 @@
+{
+	"model_info": {
+		"https://kic.lgthinq.com:46030/api/webContents/modelJSON?modelName=modelJSON_401&countryCode=KR&contentsId=d286d780-7149-11d3-80f8-203dbd8d44ce&authKey=thinq": {
+			"Info": {
+				"productType": "AirPurifier",
+				"country": "WW",
+				"modelType": "",
+				"model": "Normal",
+				"modelName": "",
+				"networkType": "WIFI",
+				"version": "3.7",
+				"productCode": "LI02"
+			},
+			"Module": {
+				"WPM": {
+					"GPM_CEN01_Main": "001",
+					"GPM_POL01": "001",
+					"GPM_FOT01_Main": "001",
+					"GPM_POL01_Guide": "001",
+					"GPM_POL01_Inside": "001",
+					"GPM_POL01_Outside": "001",
+					"GPM_POL02_SelectCity": "001",
+					"GPM_REC_Main": "001",
+					"GPM_SCH01_Main": "001",
+					"GPM_SCH02_AddEdit": "001",
+					"GPM_SCH03_Delete": "001",
+					"GPM_SCH04_Main": "001",
+					"GPM_SCH05_OffTime": "001",
+					"GPM_SCH06_OnTime": "001",
+					"GPM_SCH07_SleepTime": "001",
+					"GPM_POG01_Main": "001",
+					"GPM_FIL01_Main": "001",
+					"GPM_FIL02_Date": "001",
+					"GPM_FIL02_MultiFilter": "001",
+					"GUG_FIL01": "001",
+					"GUG_FIL02": "001",
+					"GPM_SET01_Main": "001",
+					"GPM_SET02_PushList": "001",
+					"GPM_SET03_SensorMon": "001"
+				},
+				"Menu": [
+					"GPM_FOL01",
+					"GPM_SCH01_Main",
+					"GPM_POG01_Main",
+					"GPM_FIL01_Main",
+					"GCM_SDS01_SdsMain",
+					"GPM_SET01_Main"
+				]
+			},
+			"Value": {
+				"SupportOpMode": {
+					"_comment": "FuncSync_운전모드",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"14": "@AP_MAIN_MID_OPMODE_CIRCULATOR_CLEAN_W",
+						"15": "@AP_MAIN_MID_OPMODE_BABY_CARE_W",
+						"16": "@AP_MAIN_MID_OPMODE_DUAL_CLEAN_W",
+						"17": "@AP_MAIN_MID_OPMODE_AUTO_W"
+					}
+				},
+				"SupportWindStrength": {
+					"_comment": "FuncSync_바람세기",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"3": "@AP_MAIN_MID_WINDSTRENGTH_LOW_W",
+						"5": "@AP_MAIN_MID_WINDSTRENGTH_MID_W",
+						"7": "@AP_MAIN_MID_WINDSTRENGTH_HIGH_W",
+						"8": "@AP_MAIN_MID_WINDSTRENGTH_POWER_W",
+						"9": "@AP_MAIN_MID_WINDSTRENGTH_AUTO_W"
+					}
+				},
+				"SupportWindMode": {
+					"_comment": "FuncSync_바람모드",
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@OFF"
+					}
+				},
+				"SupportRACMode": {
+					"_comment": "FuncSync_RAC모드",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"12": "@AP_AIRREMOVAL"
+					}
+				},
+				"SupportReserve": {
+					"_comment": "FuncSync_예약 정보",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"5": "@AP_OFF_ON_TIME",
+						"6": "@AP_SCHEDULER",
+						"8": "@AP_SLEEP_TIMER_AIRCLEAN"
+					}
+				},
+				"SupportPush": {
+					"_comment": "FuncSync_푸쉬 지원",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"3": "@PATLOL",
+						"14": "@D_PLUS_TOP_FILTER",
+						"15": "@D_PLUS_BOTTOM_FILTER"
+					}
+				},
+				"SupportLight": {
+					"_comment": "FuncSync_라이팅",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"3": "@SIGNAL_LIGHTING_ONOFF"
+					}
+				},
+				"SupportTempCfg": {
+					"_comment": "FuncSync_화씨 섭씨",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"SupportTempCtrl": {
+					"_comment": "FuncSync_1도 0.5도",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"SupportGroupType": {
+					"_comment": "FuncSync_그룹타입",
+					"type": "Enum",
+					"option": {
+						"0": "@PAC",
+						"3": "@AWHP",
+						"4": "@HWANKI"
+					}
+				},
+				"SupportAccumulate": {
+					"_comment": "FuncSync_전력량사용여부",
+					"type": "Enum",
+					"option": {
+						"0": "@NOT_SUPPORT"
+					}
+				},
+				"SupportExtraOp": {
+					"_comment": "FuncSync_비상운전기능 지원",
+					"type": "Enum",
+					"option": {
+						"0": "@NOT_SUPPORT"
+					}
+				},
+				"SupportMFilter": {
+					"_comment": "FuncSync_M필터지원",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"1": "@SUPPORT",
+						"7": "@SUPPORT_D_PLUS_TOP",
+						"8": "@SUPPORT_D_PLUS_BOTTOM"
+					}
+				},
+				"SupportAirPolution": {
+					"_comment": "FuncSync_공기오염도",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"1": "@POLUTION_SUPPORT",
+						"2": "@PM1_0_SUPPORT",
+						"3": "@PM2_5_SUPPORT",
+						"4": "@PM10_SUPPORT",
+						"5": "@TOTAL_CLEAN_SUPPORT",
+						"8": "@SENSOR_MONITORING_SET_SUPPORT"
+					}
+				},
+				"SupportQVoice": {
+					"_comment": "FuncSync_음성인식/안내지원여부",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"SupportQVoiceOption": {
+					"_comment": "FuncSync_HILG안내지원여부",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"Operation": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@operation_off",
+						"1": "@operation_on"
+					}
+				},
+				"SupportSmartFunc": {
+					"_comment": "FuncSync_진단_포타지원",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"1": "@SDS_WIFI",
+						"2": "@FOTA",
+						"3": "@SDS_BUZZER"
+					}
+				},
+				"OpMode": {
+					"type": "Enum",
+					"option": {
+						"0": "@AC_MAIN_OPERATION_MODE_COOL_W",
+						"1": "@AC_MAIN_OPERATION_MODE_DRY_W",
+						"2": "@AC_MAIN_OPERATION_MODE_FAN_W",
+						"3": "@AC_MAIN_OPERATION_MODE_AI_W",
+						"4": "@AC_MAIN_OPERATION_MODE_HEAT_W",
+						"5": "@AC_MAIN_OPERATION_MODE_AIRCLEAN_W",
+						"6": "@AC_MAIN_OPERATION_MODE_ACO_W",
+						"7": "@AC_MAIN_OPERATION_MODE_AROMA_W",
+						"8": "@AC_MAIN_OPERATION_MODE_ENERGY_SAVING_W",
+						"9": "@AP_MAIN_MID_OPMODE_CLEAN_W",
+						"10": "@AP_MAIN_MID_OPMODE_SLEEP_W",
+						"11": "@AP_MAIN_MID_OPMODE_SILENT_W",
+						"12": "@AP_MAIN_MID_OPMODE_HUMIDITY_W",
+						"13": "@AP_MAIN_MID_OPMODE_CIRCULATOR_CLEAN_W",
+						"14": "@AP_MAIN_MID_OPMODE_BABY_CARE_W",
+						"15": "@AP_MAIN_MID_OPMODE_DUAL_CLEAN_W",
+						"16": "@AP_MAIN_MID_OPMODE_AUTO_W",
+						"17": "@AP_MAIN_MID_OPMODE_SMART_DEHUM_W",
+						"18": "@AP_MAIN_MID_OPMODE_FAST_DEHUM_W",
+						"19": "@AP_MAIN_MID_OPMODE_CILENT_DEHUM_W",
+						"20": "@AP_MAIN_MID_OPMODE_CONCENTRATION_DRY_W",
+						"21": "@AP_MAIN_MID_OPMODE_CLOTHING_DRY_W",
+						"27": "@AP_MAIN_OPERATION_MODE_SMART_W",
+						"28": "@AP_MAIN_OPERATION_MODE_FAST_W",
+						"29": "@AP_MAIN_MID_OPMODE_HUMIDITY_NORMAL_W"
+					},
+					"label": "운전 모드"
+				},
+				"WindStrength": {
+					"type": "Enum",
+					"option": {
+						"0": "@AP_MAIN_MID_WINDSTRENGTH_LOWST_LOW_W",
+						"1": "@AP_MAIN_MID_WINDSTRENGTH_LOWST_W",
+						"2": "@AP_MAIN_MID_WINDSTRENGTH_LOW_W",
+						"3": "@AP_MAIN_MID_WINDSTRENGTH_LOW_MID_W",
+						"4": "@AP_MAIN_MID_WINDSTRENGTH_MID_W",
+						"5": "@AP_MAIN_MID_WINDSTRENGTH_MID_HIGH_W",
+						"6": "@AP_MAIN_MID_WINDSTRENGTH_HIGH_W",
+						"7": "@AP_MAIN_MID_WINDSTRENGTH_POWER_W",
+						"8": "@AP_MAIN_MID_WINDSTRENGTH_AUTO_W",
+						"9": "@AP_MAIN_MID_WINDSTRENGTH_LONGPOWWER_W",
+						"10": "@AP_MAIN_MID_WINDSTRENGTH_SHOWER_W",
+						"11": "@AP_MAIN_MID_WINDSTRENGTH_FOREST_W",
+						"12": "@AP_MAIN_MID_WINDSTRENGTH_TURBO_W",
+						"13": "@AP_MAIN_MID_WINDSTRENGTH_FASTWIND_W"
+					},
+					"label": "바람 세기"
+				},
+				"TempCur": {
+					"_comment": "현재온도",
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": -40,
+						"max": 60,
+						"step": 1
+					}
+				},
+				"AntiBugs": {
+					"type": "Enum",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					},
+					"label": "모기퇴치"
+				},
+				"SignalLighting": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"SensorMon": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_SETTING_SENSORMON_OPERATIONING_W",
+						"1": "@AP_SETTING_SENSORMON_ALWAYS_W"
+					}
+				},
+				"SleepTime": {
+					"_comment": "1시간일 경우 60으로 데이터 받음, 2,4,8,12 시간 적용필요함. ",
+					"type": "String"
+				},
+				"TimeBsOn": {
+					"_comment": "오전 12시 30분은 0030, 오후12시30분은 1230 ,오후 4시30분은 1630 off는 0 ",
+					"type": "String"
+				},
+				"TimeBsOff": {
+					"_comment": "오전 12시 30분은 0030, 오후12시30분은 1230 ,오후 4시30분은 1630 off는 0",
+					"type": "String"
+				},
+				"Schedule": {
+					"_comment": "7자리 숫자-> index(1)|On/Off(2)|time(4)",
+					"type": "String"
+				},
+				"SensorPM1": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 1000,
+						"step": 1
+					}
+				},
+				"SensorPM2": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 1000,
+						"step": 1
+					}
+				},
+				"SensorPM10": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 1000,
+						"step": 1
+					}
+				},
+				"SensorHumidity": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 100,
+						"step": 1
+					}
+				},
+				"TotalAirPolution": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 1000,
+						"step": 1
+					}
+				},
+				"AirPolution": {
+					"comment": "냄새",
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 1000,
+						"step": 1
+					}
+				},
+				"DiagCode": {
+					"type": "Enum",
+					"default": "00",
+					"option": {
+						"00": "@NORMAL",
+						"09": "@ERROR_EEPROM",
+						"10": "@ERROR_FAN",
+						"11": "@ERROR_E11",
+						"12": "@ERROR_CIRCULATION_FAN",
+						"15": "@ERROR_E15",
+						"255": "@NORMAL"
+					}
+				},
+				"QVoiceOperation": {
+					"_comment": "음성인식 On/Off",
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@OFF",
+						"1": "@ON"
+					}
+				},
+				"QVoiceOption": {
+					"_comment": "LG휘센/HILG",
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AC_VOICE_LG_WHISEN",
+						"1": "@AC_VOICE_HI_LG"
+					}
+				},
+				"FeedbackSound": {
+					"_comment": "피드백 사운드",
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@OFF",
+						"1": "@ON"
+					}
+				},
+				"QVioceSensitivity": {
+					"_comment": "민감도",
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": 0,
+						"1": 1,
+						"2": 2,
+						"3": 3,
+						"4": 4,
+						"5": 5,
+						"6": 6,
+						"7": 7,
+						"8": 8,
+						"9": 9,
+						"10": 10,
+						"11": 11,
+						"12": 12,
+						"13": 13,
+						"14": 14,
+						"15": 15,
+						"16": 16,
+						"17": 17,
+						"18": 18,
+						"19": 19,
+						"20": 20,
+						"21": 21,
+						"22": 22,
+						"23": 23,
+						"24": 24,
+						"25": 25,
+						"26": 26,
+						"27": 27,
+						"28": 28,
+						"29": 29,
+						"30": 30,
+						"31": 31,
+						"32": 32,
+						"33": 33,
+						"34": 34,
+						"35": 35,
+						"36": 36,
+						"37": 37,
+						"38": 38,
+						"39": 39,
+						"40": 40,
+						"41": 41,
+						"42": 42,
+						"43": 43,
+						"44": 44,
+						"45": 45,
+						"46": 46,
+						"47": 47,
+						"48": 48,
+						"49": 49,
+						"50": 50
+					}
+				},
+				"SupportOpModeExt": {
+					"_comment": "FuncSync_운전모드추가",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"SupportCirculateStrength": {
+					"_comment": "FuncSync_순환바람세기",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"3": "@AP_MAIN_MID_CIRCULATORSTRENGTH_LOW_W",
+						"5": "@AP_MAIN_MID_CIRCULATORSTRENGTH_MID_W",
+						"7": "@AP_MAIN_MID_CIRCULATORSTRENGTH_HIGH_W",
+						"8": "@AP_MAIN_MID_CIRCULATORSTRENGTH_POWER_W",
+						"9": "@AP_MAIN_MID_CIRCULATORSTRENGTH_AUTO_W"
+					}
+				},
+				"SupportCirculateDir": {
+					"_comment": "FuncSync_순환방향",
+					"type": "Enum",
+					"option": {
+						"0": "@NONSUPPORT",
+						"1": "@SUPPORT"
+					}
+				},
+				"SupportProductStatus": {
+					"_comment": "FuncSync_제품상태",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"SupportHumidityCfg": {
+					"_comment": "FuncSync_습도제어자리수",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"SupportHymidityLimit": {
+					"_comment": "FuncSync_습도범위 설정 지원 여부",
+					"type": "Enum",
+					"option": {
+						"0": "@NON"
+					}
+				},
+				"SupportAISmartCare": {
+					"_comment": "FuncSync_AI스마트케어_지원여부",
+					"type": "Enum",
+					"option": {
+						"0": "@NON",
+						"1": "@SUPPORT"
+					}
+				},
+				"HumidityCfg": {
+					"_comment": "##희망습도_기본",
+					"type": "Range",
+					"default": "30",
+					"option": {
+						"min": 30,
+						"max": 70,
+						"step": 5
+					}
+				},
+				"CirculateStrength": {
+					"type": "Enum",
+					"label": "서큘레이터 세기",
+					"option": {
+						"0": "@AP_MAIN_MID_CIRCULATORSTRENGTH_LOWST_LOW_W",
+						"1": "@AP_MAIN_MID_CIRCULATORSTRENGTH_LOWST_W",
+						"2": "@AP_MAIN_MID_CIRCULATORSTRENGTH_LOW_W",
+						"3": "@AP_MAIN_MID_CIRCULATORSTRENGTH_LOW_MID_W",
+						"4": "@AP_MAIN_MID_CIRCULATORSTRENGTH_MID_W",
+						"5": "@AP_MAIN_MID_CIRCULATORSTRENGTH_MID_HIGH_W",
+						"6": "@AP_MAIN_MID_CIRCULATORSTRENGTH_HIGH_W",
+						"7": "@AP_MAIN_MID_CIRCULATORSTRENGTH_POWER_W",
+						"8": "@AP_MAIN_MID_CIRCULATORSTRENGTH_AUTO_W",
+						"9": "@AP_MAIN_MID_CIRCULATORSTRENGTH_LINK_W"
+					}
+				},
+				"CirculateDir": {
+					"type": "Enum",
+					"label": "순환 회전",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"OutsideTempCur": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": -40,
+						"max": 60,
+						"step": 1
+					}
+				},
+				"GroupType": {
+					"_comment": "그룹타입 실질적으로 쓰지 않음",
+					"type": "Enum",
+					"option": {}
+				},
+				"FilterUse": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 4000,
+						"step": 1
+					}
+				},
+				"FilterMax": {
+					"type": "Enum",
+					"label": "필터 최대값",
+					"option": {
+						"0": "0",
+						"4000": "4000"
+					}
+				},
+				"FilterType": {
+					"type": "Enum",
+					"label": "필터 종류",
+					"comment": "1 : 교체필터 , 2: 무교체필터",
+					"option": {
+						"1": "1",
+						"2": "2"
+					}
+				},
+				"AirRemoval": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"AirFast": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"SleepMode": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"AirUVDisinfection": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"AirCapsule": {
+					"_comment": "여러개 조합으로 명령 보낼 수 있음, base64디코딩 되어야함.",
+					"type": "String"
+				},
+				"AISmartCare": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"PetMode": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"CleanDry": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_ON_W"
+					}
+				},
+				"AirMonitoring": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@AP_SETTING_SENSORMON_OPERATIONING_W",
+						"1": "@AP_SETTING_SENSORMON_ALWAYS_W"
+					}
+				},
+				"OutsidePM2": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 1000,
+						"step": 1
+					}
+				},
+				"ProductStatus": {
+					"type": "Enum",
+					"default": "0",
+					"comment": "탈착감지",
+					"option": {
+						"0": "@AP_OFF_W",
+						"1": "@AP_POP_ALARM_FILTER_W",
+						"2": "@AP_POP_ALARM_COVER_W",
+						"3": "@AP_POP_ALARM_FILTER_COVER_W",
+						"4": "@AP_POP_ALARM_HUMIDY_FILTER_W",
+						"5": "@AP_POP_ALARM_FILTER_W",
+						"6": "@AP_POP_ALARM_COVER_W",
+						"7": "@AP_POP_ALARM_FILTER_W",
+						"8": "@AP_POP_ALARM_HUMIDY_FILTER_W",
+						"9": "@AP_POP_ALARM_FILTER_W",
+						"10": "@AP_POP_ALARM_FILTER_W",
+						"11": "@AP_POP_ALARM_FILTER_W",
+						"12": "@AP_POP_ALARM_HUMIDY_FILTER_W",
+						"13": "@AP_POP_ALARM_FILTER_W",
+						"14": "@AP_POP_ALARM_FILTER_W",
+						"15": "@AP_POP_ALARM_FILTER_W",
+						"16": "@AP_POP_ALARM_FILTER_W",
+						"17": "@AP_POP_ALARM_FILTER_W",
+						"18": "@AP_POP_ALARM_FILTER_W",
+						"19": "@AP_POP_ALARM_FILTER_W",
+						"20": "@AP_POP_ALARM_FILTER_W",
+						"21": "@AP_POP_ALARM_FILTER_W",
+						"22": "@AP_POP_ALARM_FILTER_W",
+						"23": "@AP_POP_ALARM_FILTER_W",
+						"24": "@AP_POP_ALARM_FILTER_W",
+						"25": "@AP_POP_ALARM_FILTER_W",
+						"26": "@AP_POP_ALARM_FILTER_W",
+						"27": "@AP_POP_ALARM_FILTER_W",
+						"28": "@AP_POP_ALARM_FILTER_W",
+						"29": "@AP_POP_ALARM_FILTER_W",
+						"30": "@AP_POP_ALARM_FILTER_W",
+						"31": "@AP_POP_ALARM_FILTER_W",
+						"32": "@AP_POP_ALARM_FILTER_W",
+						"33": "@AP_POP_ALARM_FILTER_W",
+						"34": "@AP_POP_ALARM_FILTER_W",
+						"35": "@AP_POP_ALARM_FILTER_W",
+						"36": "@AP_POP_ALARM_FILTER_W",
+						"37": "@AP_POP_ALARM_FILTER_W",
+						"38": "@AP_POP_ALARM_FILTER_W",
+						"39": "@AP_POP_ALARM_FILTER_W",
+						"40": "@AP_POP_ALARM_FILTER_W",
+						"41": "@AP_POP_ALARM_FILTER_W",
+						"42": "@AP_POP_ALARM_FILTER_W",
+						"43": "@AP_POP_ALARM_FILTER_W",
+						"44": "@AP_POP_ALARM_FILTER_W",
+						"45": "@AP_POP_ALARM_FILTER_W",
+						"46": "@AP_POP_ALARM_FILTER_W",
+						"47": "@AP_POP_ALARM_FILTER_W",
+						"48": "@AP_POP_ALARM_FILTER_W",
+						"49": "@AP_POP_ALARM_FILTER_W",
+						"50": "@AP_POP_ALARM_FILTER_W",
+						"51": "@AP_POP_ALARM_FILTER_W",
+						"52": "@AP_POP_ALARM_FILTER_W",
+						"53": "@AP_POP_ALARM_FILTER_W",
+						"54": "@AP_POP_ALARM_FILTER_W",
+						"55": "@AP_POP_ALARM_FILTER_W",
+						"56": "@AP_POP_ALARM_FILTER_W",
+						"57": "@AP_POP_ALARM_FILTER_W",
+						"58": "@AP_POP_ALARM_FILTER_W",
+						"59": "@AP_POP_ALARM_FILTER_W",
+						"60": "@AP_POP_ALARM_FILTER_W",
+						"61": "@AP_POP_ALARM_FILTER_W",
+						"62": "@AP_POP_ALARM_FILTER_W",
+						"63": "@AP_POP_ALARM_FILTER_W"
+					}
+				},
+				"OutsideHumidity": {
+					"type": "Range",
+					"default": "0",
+					"option": {
+						"min": 0,
+						"max": 100,
+						"step": 1
+					}
+				},
+				"PollutionNotification": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@POLLUTION_NO",
+						"1": "@POLLUTION_YES"
+					}
+				},
+				"FilterChangeNotification": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@FILTERCHANGE_NO",
+						"1": "@FILTERCHANGE_YES"
+					}
+				},
+				"WaterLackNotification": {
+					"type": "Enum",
+					"default": "0",
+					"option": {
+						"0": "@WATERLACK_NO",
+						"1": "@WATERLACK_YES"
+					}
+				}
+			},
+			"Monitoring": {
+				"type": "JSON",
+				"protocol": [
+					{
+						"path": "Operation",
+						"value": "Operation"
+					},
+					{
+						"path": "OpMode",
+						"value": "OpMode"
+					},
+					{
+						"path": "HumidityCfg",
+						"value": "HumidityCfg"
+					},
+					{
+						"path": "WindStrength",
+						"value": "WindStrength"
+					},
+					{
+						"path": "CirculateStrength",
+						"value": "CirculateStrength"
+					},
+					{
+						"path": "CirculateDir",
+						"value": "CirculateDir"
+					},
+					{
+						"path": "AntiBugs",
+						"value": "AntiBugs"
+					},
+					{
+						"path": "AirRemoval",
+						"value": "AirRemoval"
+					},
+					{
+						"path": "AirFast",
+						"value": "AirFast"
+					},
+					{
+						"path": "SleepMode",
+						"value": "SleepMode"
+					},
+					{
+						"path": "AirUVDisinfection",
+						"value": "AirUVDisinfection"
+					},
+					{
+						"path": "SignalLighting",
+						"value": "SignalLighting"
+					},
+					{
+						"path": "TimeBsOn",
+						"value": "TimeBsOn"
+					},
+					{
+						"path": "TimeBsOff",
+						"value": "TimeBsOff"
+					},
+					{
+						"path": "SleepTime",
+						"value": "SleepTime"
+					},
+					{
+						"path": "DiagCode",
+						"value": "DiagCode"
+					},
+					{
+						"path": "SensorPM1",
+						"value": "SensorPM1"
+					},
+					{
+						"path": "SensorPM2",
+						"value": "SensorPM2"
+					},
+					{
+						"path": "SensorPM10",
+						"value": "SensorPM10"
+					},
+					{
+						"path": "SensorMon",
+						"value": "SensorMon"
+					},
+					{
+						"path": "AirMonitoring",
+						"value": "AirMonitoring"
+					},
+					{
+						"path": "SensorHumidity",
+						"value": "SensorHumidity"
+					},
+					{
+						"path": "TempCur",
+						"value": "TempCur"
+					},
+					{
+						"path": "AirPolution",
+						"value": "AirPolution"
+					},
+					{
+						"path": "ProductStatus",
+						"value": "ProductStatus"
+					},
+					{
+						"path": "CleanDry",
+						"value": "CleanDry"
+					},
+					{
+						"path": "TotalAirPolution",
+						"value": "TotalAirPolution"
+					},
+					{
+						"path": "AISmartCare",
+						"value": "AISmartCare"
+					},
+					{
+						"path": "QVoiceOperation",
+						"value": "QVoiceOperation"
+					},
+					{
+						"path": "QVoiceOption",
+						"value": "QVoiceOption"
+					},
+					{
+						"path": "FeedbackSound",
+						"value": "FeedbackSound"
+					},
+					{
+						"path": "QVioceSensitivity",
+						"value": "QVioceSensitivity"
+					},
+					{
+						"path": "PetMode",
+						"value": "PetMode"
+					}
+				]
+			},
+			"ControlWifi": {
+				"type": "JSON",
+				"action": {
+					"GetDevState": {
+						"cmd": "DevState"
+					},
+					"SetOpMode": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"OpMode\":\"{{OpMode}}\"}"
+					},
+					"SetWindStrength": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"WindStrength\":\"{{WindStrength}}\"}"
+					},
+					"SetAntiBugs": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"AntiBugs\":\"{{AntiBugs}}\"}"
+					},
+					"GetTimeBsOn": {
+						"cmd": "Control",
+						"cmdOpt": "Get",
+						"value": "TimeBsOn"
+					},
+					"SetTimeBsOn": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"TimeBsOn\":\"{{TimeBsOnHour}}\"}"
+					},
+					"SetTimeBsOff": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"TimeBsOff\":\"{{TimeBsOffHour}}\"}"
+					},
+					"GetSchedule": {
+						"cmd": "Control",
+						"cmdOpt": "Get",
+						"value": "Schedule"
+					},
+					"SetSchedule": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"Schedule\":\"{{Schedule}}\"}"
+					},
+					"GetFilterUse": {
+						"cmd": "Config",
+						"cmdOpt": "Get",
+						"value": "Filter"
+					},
+					"SetFilterUse": {
+						"cmd": "Config",
+						"cmdOpt": "Set",
+						"value": "{\"Filter\":\"{{Filter}}\"}"
+					},
+					"GetSensorMon": {
+						"cmd": "Config",
+						"cmdOpt": "Get",
+						"value": "SensorMon"
+					},
+					"SetSensorMon": {
+						"cmd": "Config",
+						"cmdOpt": "Set",
+						"value": "{\"SensorMon\":\"{{SensorMon}}\"}"
+					},
+					"SetAirCapsule": {
+						"cmd": "Config",
+						"cmdOpt": "Set",
+						"value": "{\"AirCapsule\":\"{{AirCapsule}}\"}",
+						"encode": true
+					},
+					"MonitoringStart": {
+						"Cmd": "Mon",
+						"CmdOpt": "Start"
+					},
+					"MonitoringStop": {
+						"Cmd": "Mon",
+						"CmdOpt": "Stop"
+					},
+					"SetOperationStart": {
+						"cmd": "Control",
+						"cmdOpt": "Operation",
+						"value": "Start"
+					},
+					"SetOperationStop": {
+						"cmd": "Control",
+						"cmdOpt": "Operation",
+						"value": "Stop"
+					},
+					"SetHumidityCfg": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"HumidityCfg\":\"{{HumidityCfg}}\"}"
+					},
+					"SetCirculateStrength": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"CirculateStrength\":\"{{CirculateStrength}}\"}"
+					},
+					"SetCirculateDir": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"CirculateDir\":\"{{CirculateDir}}\"}"
+					},
+					"GetTimeBsoff": {
+						"cmd": "Control",
+						"cmdOpt": "Get",
+						"value": "TimeBsOff"
+					},
+					"SetSleepTime": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"SleepTime\":\"{{SleepTime}}\"}"
+					},
+					"GetSleepTime": {
+						"cmd": "Control",
+						"cmdOpt": "Get",
+						"value": "SleepTime"
+					},
+					"SetCleanDry": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"CleanDry\":\"{{CleanDry}}\"}"
+					},
+					"GetCleanDry": {
+						"cmd": "Control",
+						"cmdOpt": "Get",
+						"value": "CleanDry"
+					},
+					"GetSignalLighting": {
+						"cmd": "Control",
+						"cmdOpt": "Get",
+						"value": "SignalLighting"
+					},
+					"SetSignalLighting": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"SignalLighting\":\"{{SignalLighting}}\"}"
+					},
+					"SetAirRemoval": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"AirRemoval\":\"{{AirRemoval}}\"}"
+					},
+					"SetAirFast": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"AirFast\":\"{{AirFast}}\"}"
+					},
+					"SetSleepMode": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"SleepMode\":\"{{SleepMode}}\"}"
+					},
+					"SetRecommend": {
+						"cmd": "Config",
+						"cmdOpt": "Set",
+						"value": "AirCapsule",
+						"format": "B64",
+						"data": "{\"Operation\": \"1\",\"OpMode\":\"9\"}"
+					},
+					"SetAISmartCare": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"AISmartCare\":\"{{AISmartCare}}\"}"
+					},
+					"GetAISmartCare": {
+						"cmd": "Config",
+						"cmdOpt": "Get",
+						"value": "AISmartCare"
+					},
+					"DiagStart": {
+						"cmd": "Diag",
+						"cmdOpt": "Start"
+					},
+					"SetPetMode": {
+						"cmd": "Control",
+						"cmdOpt": "Set",
+						"value": "{\"PetMode\":\"{{PetMode}}\"}"
+					},
+					"GetPetMode": {
+						"cmd": "Config",
+						"cmdOpt": "Get",
+						"value": "PetMode"
+					}
+				}
+			},
+			"Push": [
+				{
+					"category": "3",
+					"label": "@AP_SETTING_ALARM_RECOMMEND_W",
+					"groupCode": "40201",
+					"pushList": [
+						{
+							"0003": "@AP_SETTING_ALARM_DUST_W"
+						}
+					]
+				},
+				{
+					"category": "14",
+					"label": "@AP_SETTING_ALARM_FILTER_TOP_D_PLUS_W",
+					"groupCode": "40208",
+					"pushList": [
+						{
+							"0014": "@AP_SETTING_ALARM_D_PLUS_TOP_FILTER_W"
+						}
+					]
+				},
+				{
+					"category": "15",
+					"label": "@AP_SETTING_ALARM_FILTER_BOTTOM_D_PLUS_W",
+					"groupCode": "40209",
+					"pushList": [
+						{
+							"0015": "@AP_SETTING_ALARM_D_PLUS_BOTTOM_FILTER_W"
+						}
+					]
+				}
+			],
+			"SmartMode": {
+				"MODE010": {
+					"_comment": "외출모드",
+					"actionName": "@AP_ALARM_MODE_W",
+					"control": [
+						{
+							"command": "SetAirCapsule",
+							"value": "AirCapsule",
+							"data": "{\"Operation\": \"1\",\"OpMode\":\"10\",\"WindStrength\":\"8\",\"SleepTime\":\"480\"}"
+						}
+					]
+				},
+				"MODE020": {
+					"_comment": "귀가모드",
+					"actionName": "@AP_ALARM_MODE_W",
+					"control": [
+						{
+							"command": "SetAirCapsule",
+							"value": "AirCapsule",
+							"data": "{\"Operation\": \"1\",\"OpMode\":\"9\",\"WindStrength\":\"8\",\"SleepTime\":\"0\"}"
+						}
+					]
+				},
+				"MODE030": {
+					"_comment": "휴가모드",
+					"actionName": "@AP_ALARM_MODE_W",
+					"control": [
+						{
+							"command": "SetOperationStop",
+							"value": "Stop"
+						}
+					]
+				},
+				"MODE040": {
+					"_comment": "취침모드",
+					"actionName": "@AP_ALARM_MODE_W",
+					"control": [
+						{
+							"command": "SetAirCapsule",
+							"value": "AirCapsule",
+							"data": "{\"Operation\": \"1\",\"OpMode\":\"10\",\"WindStrength\":\"8\",\"SleepTime\":\"480\"}"
+						}
+					]
+				},
+				"MODE050": {
+					"_comment": "쾌적모드",
+					"actionName": "@AP_ALARM_MODE_W",
+					"control": [
+						{
+							"command": "SetOperationStart",
+							"value": "Start"
+						}
+					]
+				}
+			},
+			"Exception": {
+				"comment": "쾌속모드 동작후, 바람세기 조절시, 쾌속모드 해제된다."
+			},
+			"Config": {
+				"fota": true,
+				"audibleDiagnosis": true,
+				"forceShowCIC": true
+			}
+		}
+	},
+	"lang_pack_product": {},
+	"lang_pack_model": {},
+	"gateway": {
+		"auth_base": "https://kr.m.lgaccount.com",
+		"api_root": "https://kic.lgthinq.com:46030/api",
+		"oauth_root": "https://kr.lgeapi.com",
+		"country": "KR",
+		"language": "ko-KR"
+	},
+	"auth": {
+		"access_token": "f9ea2c5b0fa520b4e786f9e4b4ab2b1f1ad994cff02e3fcc5a3e61413509b4b6a45d4f6e2445e53eae8b2bc07a82be82",
+		"refresh_token": "7950dbb30aed1841822b7d39aefdf92f870566d330fbd58f9a1e5da62db414d08b54e7b4198cafd1c1cbd09eb9f11710"
+	},
+	"session": "98CF900AD49BFF666674C7E54526184B.node_sadap_11",
+	"country": "kr",
+	"language": "ko-KR"
+}
