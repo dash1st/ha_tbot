@@ -9,6 +9,8 @@ from urllib.request import urlopen
 from urllib import parse
 from bs4 import BeautifulSoup
 from collections import OrderedDict
+from telegram.ext import Updater, CommandHandler, CallbackQueryHandler
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 InfoMsg = "아래의 요청 중 하나를 고르고 번호를 입력하세요.\n" \
           "1 : CCTV 화면 캡쳐\n" \
@@ -19,11 +21,20 @@ InfoMsg = "아래의 요청 중 하나를 고르고 번호를 입력하세요.\n
           "6 : 보안 NEWS 확인\n" \
           "/사진보내 : 윤서지현 사진을 보냅니다\n" \
           "9 : 종료"
-
+InfoMsg2 = "어느 방의 CCTV를 볼까요?.\n" \
+          "1 : 거실\n" \
+          "2 : 안방\n" \
+          "3 : 날씨 확인\n" \
+          "4 : 미세먼지 확인\n" \
+		  "5 : 인도 코로나 NEWS 확인\n" \
+          "6 : 보안 NEWS 확인\n" \
+          "/사진보내 : 윤서지현 사진을 보냅니다\n" \
+          "9 : 취소"
 status = True
-
+updater = Updater(genietoken)
 # 1. 집안 사진
 def get_cctv_pic(id):
+    
     os.system('capture.py')
 
     filepath = 'D:/python_project/images/temp.png'
@@ -187,6 +198,38 @@ def Site_ON(id):
         else:
             bot.sendMessage(chat_id=id, text='새로운 뉴스 없음')
 
+def build_menu(buttons, n_cols, header_buttons=None, footer_buttons=None):
+    menu = [buttons[i:i + n_cols] for i in range(0, len(buttons), n_cols)]
+    if header_buttons:
+        menu.insert(0, header_buttons)
+    if footer_buttons:
+        menu.append(footer_buttons)
+    return menu
+
+
+def cctv_command(bot, update):
+    print("ddd")
+    show_list = []
+    show_list.append(InlineKeyboardButton("1.거실", callback_data="url1"))
+    show_list.append(InlineKeyboardButton("2.안방", callback_data="url2")) 
+    show_list.append(InlineKeyboardButton("취소", callback_data="cancel")) # add cancel button
+    show_markup = InlineKeyboardMarkup(build_menu(show_list, len(show_list) - 1)) # make markup
+
+    update.message.reply_text("어떤 방 cctv를 볼까요?", reply_markup=show_markup)
+
+
+def callback_get(bot, update):
+    print("callback")
+    if update.callback_query.data == "좋아":
+        bot.edit_message_text(text="진짜? 내 추천 좋지?! 오늘 술 잘 마시고 지나친 음주는 몸에 안 좋은 거 알지?!" + "\n" + "다음에 또 놀러와!",
+                          chat_id=update.callback_query.message.chat_id,
+                          message_id=update.callback_query.message.message_id)
+
+    if update.callback_query.data == '별로야' :
+        bot.edit_message_text(text= "솔직한 의견 고마워" + "\n" + "다음에 또 놀러와!",
+                        chat_id = update.callback_query.message.chat_id,
+                        message_id = update.callback_query.message.message_id)def callback_get(bot, update):
+    
 
 #대화 시작
 def handle(msg):
@@ -195,10 +238,20 @@ def handle(msg):
     city = 'gurgaon'
     if content == 'text':
         if msg['text'] == '1':
-            bot.sendMessage(id, '집안사진를 확인합니다.')
-
-            get_cctv_pic(id)
-            bot.sendMessage(id, InfoMsg)
+#            bot.sendMessage(id, '집안사진를 확인합니다.')
+        
+            bot.sendMessage(id, InfoMsg2)
+            if msg['text'] == '7':
+                bot.sendMessage(id, 'aaa')
+                bot.sendMessage(id, '거실 사진') 
+                get_cctv_pic(id)
+                bot.sendMessage(id, InfoMsg)
+            elif msg['text'] == '8':
+                bot.sendMessage(id, 'bbb')
+                bot.sendMessage(id, '안방')
+            else:
+                bot.sendMessage(id, 'ccc')
+                bot.sendMessage(id, InfoMsg)
         elif msg['text'] == '2':
             bot.sendMessage(id, '인도 환율을 확인합니다.')
             CURRENCY = "오늘의 인도환율 : {}".format(get_inr_krw())
@@ -231,8 +284,14 @@ def handle(msg):
             bot.sendMessage(id, InfoMsg)     
         else:
             bot.sendMessage(id, InfoMsg)
+#미정 chat id
+bot.sendMessage('910651690', 'BOT 이 시작했습니다.')
+
+#영선 chat id
+#bot.sendMessage('438787080', 'BOT 이 시작했습니다.')
 
 bot.message_loop(handle)
 
 while status == True:
+
     time.sleep(10)
