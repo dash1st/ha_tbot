@@ -3,7 +3,7 @@ import os
 import datetime
 from threading import Thread
 from queue import Queue
-
+import sample
 import cv2
 
 print(url)

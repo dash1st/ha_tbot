@@ -35,10 +35,9 @@ genietoken= "1232357351:AAH6fwSyjpvXHC63279YUoLMeKkwEWhFVO8"
 bot = telepot.Bot(genietoken)
 
 # 1. 집안 사진
-def get_cctv_pic(id, url):
+def get_cctv_pic(id):
     
-    subprocess.call('python capture.py url') 
-
+    os.system('capture.py')
 
     filepath = 'D:/python_project/images/temp.png'
     bot.sendMessage(id, '알겠다 거실사진 보낼께 오래 걸릴예정 기달려~')
