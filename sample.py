@@ -5,6 +5,7 @@ import json
 import subprocess
 import requests
 import urllib
+import pathlib
 from urllib.request import urlopen
 from urllib import parse
 from bs4 import BeautifulSoup
@@ -93,11 +94,15 @@ def get_cctv_pic(chat_id, url):
     cam.save_picture()
 
     filepath = 'D:/python_project/git/telebot/images/temp.png'
-
+    file = pathlib.Path("D:/python_project/git/telebot/images/temp.png")
     time.sleep(10)
     #bot.sendDocument(id,open(filepath,'rb')) # 모든 파일 가능
-    bot.sendPhoto(chat_id, open(filepath,'rb')) # 사진만 가능
-
+    if file.exists ():
+        bot.sendPhoto(chat_id, open(filepath,'rb')) # 사진만 가능
+        os.remove(filepath)
+    else:
+        bot.sendMessage(chat_id, 'CCTV 꺼졌음')
+    
 # 2. 환율 반환
 def get_inr_krw():
     url = 'https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWINR'
@@ -258,15 +263,21 @@ def on_chat_message(msg):
 
 
             keyboard = InlineKeyboardMarkup(inline_keyboard=[
-                           [InlineKeyboardButton(text='거실-쇼파앞', callback_data='url1')],
-                           [InlineKeyboardButton(text='부엌', callback_data='url2')],
-                           [InlineKeyboardButton(text='안방', callback_data='url3')],
-                           [InlineKeyboardButton(text='현관', callback_data='url4')],
-                           [InlineKeyboardButton(text='아야', callback_data='url5')],
-                           [InlineKeyboardButton(text='놀이방', callback_data='url6')],
-                           [InlineKeyboardButton(text='DEN', callback_data='url7')],
-                           [InlineKeyboardButton(text='로비', callback_data='url8')],
-                           [InlineKeyboardButton(text='거실-쇼파뒤', callback_data='url9')]
+                           [
+                           InlineKeyboardButton(text='거실-쇼파앞', callback_data='url1'),
+                           InlineKeyboardButton(text='부엌', callback_data='url2'),
+                           InlineKeyboardButton(text='안방', callback_data='url3')
+                           ],
+                           [
+                           InlineKeyboardButton(text='현관', callback_data='url4'),
+                           InlineKeyboardButton(text='아야', callback_data='url5'),
+                           InlineKeyboardButton(text='놀이방', callback_data='url6')
+                           ],
+                           [
+                           InlineKeyboardButton(text='DEN', callback_data='url7'),
+                           InlineKeyboardButton(text='로비', callback_data='url8'),
+                           InlineKeyboardButton(text='거실-쇼파뒤', callback_data='url9')
+                           ]
                        ])
 
             bot.sendMessage(chat_id, 'Use inline keyboard', reply_markup=keyboard)

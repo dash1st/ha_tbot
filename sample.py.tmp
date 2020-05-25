@@ -5,6 +5,7 @@ import json
 import subprocess
 import requests
 import urllib
+import pathlib
 from urllib.request import urlopen
 from urllib import parse
 from bs4 import BeautifulSoup
@@ -93,10 +94,10 @@ def get_cctv_pic(chat_id, url):
     cam.save_picture()
 
     filepath = 'D:/python_project/git/telebot/images/temp.png'
-    time.sleep(10)
+    file = pathlib.Path("D:/python_project/git/telebot/images/temp.png")
+    time.sleep(5)
     #bot.sendDocument(id,open(filepath,'rb')) # 모든 파일 가능
-    if filepath.exists ():
-
+    if file.exists ():
         bot.sendPhoto(chat_id, open(filepath,'rb')) # 사진만 가능
         os.remove(filepath)
     else:
